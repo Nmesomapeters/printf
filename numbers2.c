@@ -177,7 +177,7 @@ int print_rot13string(va_list types, char buffer[],
 		if (!in[n])
 		{
 			z = str[m];
-			write(1, &x, 1);
+			write(1, &z, 1);
 			counter++;
 		}
 	}

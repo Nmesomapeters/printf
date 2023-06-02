@@ -116,13 +116,13 @@ int print_int(va_list types, char buffer[],
 	long int z = va_arg(types, long int);
 	unsigned long int number;
 
-	z = convert_size_number(n, size);
+	z = convert_size_number(z, size);
 
 	if (z == 0)
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	number = (unsigned long int)n;
+	number = (unsigned long int)z;
 
 	if (z < 0)
 	{

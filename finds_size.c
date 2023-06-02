@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_size - it calculates the size to cast the argument
+ * get_size - it calculates the size to cast the argument.
  * @format: Format
  * @i: lists of arguments to print.
  * Return: Precision.

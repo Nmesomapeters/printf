@@ -1,7 +1,5 @@
 #include "main.h"
 
-/** dispays char **/
-
 /**
  * print_char - to print char
  * @types: List a of arguments
@@ -19,7 +17,7 @@ int print_char(va_list types, char buffer[],
 
 	return (handle_write_char(f, buffer, flags, width, precision, size));
 }
-/** to display a string **/
+
 /**
  * print_string - to print strings
  * @types: list a of arguments
@@ -97,10 +95,9 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 
-/* Diplays int */
 /**
  * print_int - to Print int
- * @types: lista of Arguments
+ * @types: lists of Arguments
  * @buffer: The buffer array to handle print
  * @flags:  calculates active flags.
  * @width: find width.
@@ -116,13 +113,13 @@ int print_int(va_list types, char buffer[],
 	long int z = va_arg(types, long int);
 	unsigned long int number;
 
-	z = convert_size_number(n, size);
+	z = convert_size_number(z, size);
 
 	if (z == 0)
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	number = (unsigned long int)n;
+	number = (unsigned long int)z;
 
 	if (z < 0)
 	{
@@ -141,10 +138,9 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
-/* for displaying unsigned binary */
 /**
  * print_binary - it prints an unsigned numbers.
- * @types: lista of Arguments
+ * @types: lists of Arguments
  * @buffer: buffer array for handling print.
  * @flags:  it calculates active flags
  * @width: find width.
@@ -171,7 +167,7 @@ int print_binary(va_list types, char buffer[],
 	for (j = 1; j < 32; j++)
 	{
 		a /= 2;
-		k[i] = (b / a) % 2;
+		k[j] = (b / a) % 2;
 	}
 	for (j = 0, sum = 0, counter = 0; j < 32; j++)
 	{
